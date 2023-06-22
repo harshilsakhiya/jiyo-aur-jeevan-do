@@ -187,7 +187,30 @@ const RegisterPage = () => {
                   </InputAdornment>
                 }
               />
+              
             </FormControl>
+            <FormControl fullWidth style={{marginTop:"15px"}}>
+              <InputLabel htmlFor='auth-register-password'>Confirmation Password</InputLabel>
+              <OutlinedInput
+                label='Password'
+                value={values.password}
+                id='auth-register-password'
+                onChange={handleChange('password')}
+                type={values.showPassword ? 'text' : 'password'}
+                endAdornment={
+                  <InputAdornment position='end'>
+                    <IconButton
+                      edge='end'
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
+                      aria-label='toggle password visibility'
+                    >
+                      {values.showPassword ? <EyeOutline fontSize='small' /> : <EyeOffOutline fontSize='small' />}
+                    </IconButton>
+                  </InputAdornment>
+                }
+              />
+              </FormControl>
             <FormControlLabel
               control={<Checkbox />}
               label={

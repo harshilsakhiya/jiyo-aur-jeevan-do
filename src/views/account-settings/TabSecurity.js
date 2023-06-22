@@ -102,55 +102,7 @@ const TabSecurity = () => {
                 </FormControl>
               </Grid>
 
-              <Grid item xs={12} sx={{ marginTop: 6 }}>
-                <FormControl fullWidth>
-                  <InputLabel htmlFor='account-settings-new-password'>New Password</InputLabel>
-                  <OutlinedInput
-                    label='New Password'
-                    value={values.newPassword}
-                    id='account-settings-new-password'
-                    onChange={handleNewPasswordChange('newPassword')}
-                    type={values.showNewPassword ? 'text' : 'password'}
-                    endAdornment={
-                      <InputAdornment position='end'>
-                        <IconButton
-                          edge='end'
-                          onClick={handleClickShowNewPassword}
-                          aria-label='toggle password visibility'
-                          onMouseDown={handleMouseDownNewPassword}
-                        >
-                          {values.showNewPassword ? <EyeOutline /> : <EyeOffOutline />}
-                        </IconButton>
-                      </InputAdornment>
-                    }
-                  />
-                </FormControl>
-              </Grid>
-
-              <Grid item xs={12}>
-                <FormControl fullWidth>
-                  <InputLabel htmlFor='account-settings-confirm-new-password'>Confirm New Password</InputLabel>
-                  <OutlinedInput
-                    label='Confirm New Password'
-                    value={values.confirmNewPassword}
-                    id='account-settings-confirm-new-password'
-                    type={values.showConfirmNewPassword ? 'text' : 'password'}
-                    onChange={handleConfirmNewPasswordChange('confirmNewPassword')}
-                    endAdornment={
-                      <InputAdornment position='end'>
-                        <IconButton
-                          edge='end'
-                          aria-label='toggle password visibility'
-                          onClick={handleClickShowConfirmNewPassword}
-                          onMouseDown={handleMouseDownConfirmNewPassword}
-                        >
-                          {values.showConfirmNewPassword ? <EyeOutline /> : <EyeOffOutline />}
-                        </IconButton>
-                      </InputAdornment>
-                    }
-                  />
-                </FormControl>
-              </Grid>
+             
             </Grid>
           </Grid>
 
