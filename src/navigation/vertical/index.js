@@ -16,19 +16,7 @@ const navigation = () => {
       icon: AccountCogOutline,
       path: '/account-settings'
     },
-    {
-      sectionTitle: 'Pages'
-    },
-    {
-      title: 'Login',
-      icon: Login,
-      path: '/pages/login'
-    },
-    {
-      title: 'Register',
-      icon: AccountPlusOutline,
-      path: '/pages/register'
-    }
+   
   ]
 }
 

@@ -241,6 +241,9 @@ const TabAccount = () => {
             <Button variant='contained' sx={{ marginRight: 3.5 }}>
               Save Changes
             </Button>
+            <Button variant='contained' sx={{ marginRight: 3.5 }}>
+              Export Pdf
+            </Button>
             <Button type='reset' variant='outlined' color='secondary'>
               Reset
             </Button>
