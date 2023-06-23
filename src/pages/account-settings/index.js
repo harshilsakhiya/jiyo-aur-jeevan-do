@@ -22,6 +22,8 @@ import TabSecurity from 'src/views/account-settings/TabSecurity'
 
 // ** Third Party Styles Imports
 import 'react-datepicker/dist/react-datepicker.css'
+import TableBasic from 'src/views/tables/TableBasic'
+import TableStickyHeader from 'src/views/tables/TableStickyHeader'
 
 const Tab = styled(MuiTab)(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
@@ -66,11 +68,24 @@ const AccountSettings = () => {
               </Box>
             }
           />
+
+          <Tab
+            value='Member'
+            label={
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <AccountOutline />
+                <TabName> Member List</TabName>
+              </Box>
+            }
+          />
         </TabList>
         <TabPanel sx={{ p: 0 }} value='account'>
           <TabAccount />
         </TabPanel>
-       
+        
+        <TabPanel sx={{ p: 0 }} value='Member'>
+          <TableStickyHeader />
+        </TabPanel>
       </TabContext>
     </Card>
   )

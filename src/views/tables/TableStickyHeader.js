@@ -10,6 +10,7 @@ import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
 import TableContainer from '@mui/material/TableContainer'
 import TablePagination from '@mui/material/TablePagination'
+import { Button } from '@mui/material'
 
 const columns = [
   { id: 'name', label: 'Name', minWidth: 170 },
@@ -34,7 +35,8 @@ const columns = [
     minWidth: 170,
     align: 'right',
     format: value => value.toFixed(2)
-  }
+  },
+
 ]
 function createData(name, code, population, size) {
   const density = population / size
@@ -85,6 +87,7 @@ const TableStickyHeader = () => {
                   {column.label}
                 </TableCell>
               ))}
+            <TableCell align="center" sx={{ minWidth: 150 }}>Action</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -100,6 +103,11 @@ const TableStickyHeader = () => {
                       </TableCell>
                     )
                   })}
+                  <TableCell>
+                    <Button align='right' variant='contained' color='error' sx={{ marginRight: 3.5 }}>
+                      Delete
+                    </Button>
+                  </TableCell>
                 </TableRow>
               )
             })}
