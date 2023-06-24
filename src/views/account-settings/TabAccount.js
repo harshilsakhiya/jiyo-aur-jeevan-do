@@ -20,12 +20,9 @@ import Button from '@mui/material/Button'
 import EyeOutline from 'mdi-material-ui/EyeOutline'
 import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
 
-
-
 // ** Icons Imports
 import Close from 'mdi-material-ui/Close'
 import { InputAdornment, OutlinedInput } from '@mui/material'
-
 
 const ImgStyled = styled('img')(({ theme }) => ({
   width: 120,
@@ -51,8 +48,6 @@ const ResetButtonStyled = styled(Button)(({ theme }) => ({
   }
 }))
 
-
-
 const TabAccount = () => {
   // ** State
   const [openAlert, setOpenAlert] = useState(true)
@@ -74,20 +69,20 @@ const TabAccount = () => {
   const handleClickShowNewPassword = () => {
     setValues({ ...values, showNewPassword: !values.showNewPassword })
   }
-  
+
   const handleMouseDownNewPassword = event => {
     event.preventDefault()
   }
-  
+
   // Handle Confirm New Password
   const handleConfirmNewPasswordChange = prop => event => {
     setValues({ ...values, [prop]: event.target.value })
   }
-  
+
   const handleClickShowConfirmNewPassword = () => {
     setValues({ ...values, showConfirmNewPassword: !values.showConfirmNewPassword })
   }
-  
+
   const handleMouseDownConfirmNewPassword = event => {
     event.preventDefault()
   }
@@ -100,7 +95,6 @@ const TabAccount = () => {
     showCurrentPassword: false,
     showConfirmNewPassword: false
   })
-
 
   return (
     <CardContent>
@@ -131,67 +125,66 @@ const TabAccount = () => {
           </Grid>
 
           <Grid item xs={12} sm={6}>
-            <TextField fullWidth label='Username' placeholder='johnDoe' defaultValue='johnDoe' />
+            <TextField fullWidth label='Username' placeholder='Username' />
           </Grid>
-        
+
           <Grid item xs={12} sm={6}>
             <TextField
               fullWidth
               type='email'
               label='Email'
-              placeholder='johnDoe@example.com'
-              defaultValue='johnDoe@example.com'
+              placeholder='Email'
             />
           </Grid>
           <Grid item xs={12} sm={6}>
-                <FormControl fullWidth>
-                  <InputLabel htmlFor='account-settings-new-password'>New Password</InputLabel>
-                  <OutlinedInput
-                    label='New Password'
-                    value={values.newPassword}
-                    id='account-settings-new-password'
-                    onChange={handleNewPasswordChange('newPassword')}
-                    type={values.showNewPassword ? 'text' : 'password'}
-                    endAdornment={
-                      <InputAdornment position='end'>
-                        <IconButton
-                          edge='end'
-                          onClick={handleClickShowNewPassword}
-                          aria-label='toggle password visibility'
-                          onMouseDown={handleMouseDownNewPassword}
-                        >
-                          {values.showNewPassword ? <EyeOutline /> : <EyeOffOutline />}
-                        </IconButton>
-                      </InputAdornment>
-                    }
-                  />
-                </FormControl>
-              </Grid>
+            <FormControl fullWidth>
+              <InputLabel htmlFor='account-settings-new-password'>New Password</InputLabel>
+              <OutlinedInput
+                label='New Password'
+                value={values.newPassword}
+                id='account-settings-new-password'
+                onChange={handleNewPasswordChange('newPassword')}
+                type={values.showNewPassword ? 'text' : 'password'}
+                endAdornment={
+                  <InputAdornment position='end'>
+                    <IconButton
+                      edge='end'
+                      onClick={handleClickShowNewPassword}
+                      aria-label='toggle password visibility'
+                      onMouseDown={handleMouseDownNewPassword}
+                    >
+                      {values.showNewPassword ? <EyeOutline /> : <EyeOffOutline />}
+                    </IconButton>
+                  </InputAdornment>
+                }
+              />
+            </FormControl>
+          </Grid>
 
-              <Grid item xs={12} sm={6}>
-                <FormControl fullWidth>
-                  <InputLabel htmlFor='account-settings-confirm-new-password'>Confirm New Password</InputLabel>
-                  <OutlinedInput
-                    label='Confirm New Password'
-                    value={values.confirmNewPassword}
-                    id='account-settings-confirm-new-password'
-                    type={values.showConfirmNewPassword ? 'text' : 'password'}
-                    onChange={handleConfirmNewPasswordChange('confirmNewPassword')}
-                    endAdornment={
-                      <InputAdornment position='end'>
-                        <IconButton
-                          edge='end'
-                          aria-label='toggle password visibility'
-                          onClick={handleClickShowConfirmNewPassword}
-                          onMouseDown={handleMouseDownConfirmNewPassword}
-                        >
-                          {values.showConfirmNewPassword ? <EyeOutline /> : <EyeOffOutline />}
-                        </IconButton>
-                      </InputAdornment>
-                    }
-                  />
-                </FormControl>
-              </Grid>
+          <Grid item xs={12} sm={6}>
+            <FormControl fullWidth>
+              <InputLabel htmlFor='account-settings-confirm-new-password'>Confirm New Password</InputLabel>
+              <OutlinedInput
+                label='Confirm New Password'
+                value={values.confirmNewPassword}
+                id='account-settings-confirm-new-password'
+                type={values.showConfirmNewPassword ? 'text' : 'password'}
+                onChange={handleConfirmNewPasswordChange('confirmNewPassword')}
+                endAdornment={
+                  <InputAdornment position='end'>
+                    <IconButton
+                      edge='end'
+                      aria-label='toggle password visibility'
+                      onClick={handleClickShowConfirmNewPassword}
+                      onMouseDown={handleMouseDownConfirmNewPassword}
+                    >
+                      {values.showConfirmNewPassword ? <EyeOutline /> : <EyeOffOutline />}
+                    </IconButton>
+                  </InputAdornment>
+                }
+              />
+            </FormControl>
+          </Grid>
           {/* <Grid item xs={12} sm={6}>
             <FormControl fullWidth>
               <InputLabel>Role</InputLabel>
