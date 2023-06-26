@@ -74,6 +74,16 @@ const AccountSettings = () => {
             label={
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 <AccountOutline />
+                <TabName> Member Account  List</TabName>
+              </Box>
+            }
+          />
+
+             <Tab
+            value='List'
+            label={
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <AccountOutline />
                 <TabName> Member List</TabName>
               </Box>
             }
@@ -84,6 +94,10 @@ const AccountSettings = () => {
         </TabPanel>
         
         <TabPanel sx={{ p: 0 }} value='Member'>
+          <TableStickyHeader />
+        </TabPanel>
+
+             <TabPanel sx={{ p: 0 }} value='List'>
           <TableStickyHeader />
         </TabPanel>
       </TabContext>
